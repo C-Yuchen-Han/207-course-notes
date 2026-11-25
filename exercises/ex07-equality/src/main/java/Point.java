@@ -46,8 +46,8 @@ public class Point {
    */
   @Override
   public String toString() {
-    // TODO
-    return "";
+    return "(" + x + ", " + y + ")";
+    // if one side of + is a String, the expression is String concatenation.
   }
 
   /**
@@ -60,7 +60,12 @@ public class Point {
   public boolean equals(Object o) {
     // TODO: check that o is a Point (use `instanceof`), cast it, and compare
     //       the x and y fields.
-    return false;
+    if (!(o instanceof Point)) {
+      return false ;
+    }
+    // cast o from Object into Point
+    Point other = (Point) o;
+    return this.x == other.x && this.y == other.y;
   }
 
   /**
@@ -72,6 +77,6 @@ public class Point {
   @Override
   public int hashCode() {
     // TODO: Objects.hash(x, y) is an easy way to combine the fields.
-    return 0;
+    return Objects.hash(x, y);
   }
 }

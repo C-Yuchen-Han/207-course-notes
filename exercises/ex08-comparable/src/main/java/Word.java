@@ -10,7 +10,7 @@
  */
 public class Word implements Comparable<Word> {
 
-  private final String text;
+  private final String text; // same class able to access private
 
   /**
    * Creates a word.
@@ -38,6 +38,7 @@ public class Word implements Comparable<Word> {
   public int compareTo(Word other) {
     // TODO: String has a .length() method. The difference of the two lengths is
     //       already negative / zero / positive in the right cases.
-    return 0;
+    return this.text.length() - other.text.length();
+    // or return this.getText().length() - other.getText().length();
   }
 }
